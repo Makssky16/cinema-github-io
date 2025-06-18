@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Про Sky Cinema</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Fon.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.7); /* Чорний прозорий фон */
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    h1, h2, h3 {
+      color: #ffcc66;
+      margin-top: 0;
+    }
+
+    p, ul, li {
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles"></div>
+
+  <div class="wrapper">
+    <div class="content">
+      <h1>SKY CINEMA</h1>
+      <p><strong>SKY CINEMA</strong> — це сучасний кінотеатр нового покоління, заснований у 2025 році. Ми — команда ентузіастів, що закохані в кіно та прагнуть зробити кожен сеанс особливим для глядача.</p>
+
+      <section>
+        <h2>НАШІ КІНОТЕАТРИ</h2>
+        <p>Це простір, де гості отримують незабутні враження та якісний відпочинок завдяки:</p>
+        <ul>
+          <li>стильному, зручному та комфортному дизайну приміщень;</li>
+          <li>залам різних форматів із великими екранами та м’якими кріслами;</li>
+          <li>новітнім технологіям показу: IMAX, ScreenX, Dolby Atmos;</li>
+          <li>репертуару зі світовими прем'єрами, українським та унікальним контентом;</li>
+          <li>попкорн-барам з оригінальними смаками та напоями.</li>
+        </ul>
+        <p><strong>Sky Cinema</strong> активно підтримує розвиток українського кінематографу та молодих режисерів.</p>
+      </section>
+
+      <section>
+        <h2>МІСІЯ SKY CINEMA</h2>
+        <p>Ми створюємо простір, де кожен гість занурюється у світ кіно та розваг, отримуючи виняткові емоції, натхнення та комфорт.</p>
+      </section>
+
+      <section>
+        <h2>ВІЗІЯ SKY CINEMA</h2>
+        <p>Бути прикладом інноваційного кінотеатру в Україні, що розвивається разом зі своєю аудиторією, впроваджуючи передові технології та підходи до дозвілля.</p>
+      </section>
+
+      <section>
+        <h2>ЦІННОСТІ SKY CINEMA</h2>
+        <h3>КЛІЄНТООРІЄНТОВАНІСТЬ</h3>
+        <p>Ми розуміємо потреби гостей і прагнемо перевершити їх очікування, забезпечуючи сервіс, що викликає довіру, тепло та задоволення.</p>
+
+        <h3>ІННОВАЦІЙНІСТЬ</h3>
+        <p>Ми постійно впроваджуємо нові рішення, технології та формати, щоб показ фільмів ставав справжнім враженням.</p>
+
+        <h3>КОМАНДНА РОБОТА</h3>
+        <p>Ми працюємо як єдина команда, підтримуємо одне одного та разом ідемо до спільної мети.</p>
+
+        <h3>ЕФЕКТИВНІСТЬ</h3>
+        <p>Раціонально використовуємо ресурси, вдосконалюємо процеси та шукаємо найкращі рішення для гостей і бізнесу.</p>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.animationDuration = `${6 + Math.random() * 8}s`;
+      particle.style.animationDelay = `${Math.random() * 10}s`;
+      document.getElementById('particles').appendChild(particle);
+    }
+  </script>
+</body>
+</html>

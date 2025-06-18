@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зв’язатися з нами</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Fon.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+    }
+        #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .support-form {
+      background: rgba(30, 30, 30, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .support-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .support-form label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      color: #aaa;
+    }
+
+    .support-form input,
+    .support-form select,
+    .support-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #2c2c2c;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .support-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .support-form button {
+      width: 100%;
+      padding: 12px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .support-form button:hover {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<div id="particles"></div>
+  <div class="container">
+    <form class="support-form">
+      <h2>Зв’яжіться з нами</h2>
+
+      <label for="name">Ім'я</label>
+      <input type="text" id="name" placeholder="Як до Вас звертатися?">
+
+      <label for="email">Введіть свою електронну адресу</label>
+      <input type="email" id="email" placeholder="example@mail.com">
+
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" placeholder="380">
+
+      <label for="type">Тип звернення</label>
+      <select id="type">
+        <option>Повернення</option>
+        <option>Скасувати бронювання</option>
+        <option>Скарга</option>
+        <option>Інше</option>
+      </select>
+
+      <label for="subcategory">Підкатегорія звернення</label>
+      <select id="subcategory">
+        <option>Особисті причини</option>
+        <option>Технічна проблема</option>
+      </select>
+
+      <label for="message">Введіть повідомлення</label>
+      <textarea id="message" placeholder=""></textarea>
+
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
+<script>
+        for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.animationDuration = `${6 + Math.random() * 8}s`;
+      particle.style.animationDelay = `${Math.random() * 10}s`;
+      document.getElementById('particles').appendChild(particle);
+    }
+</script>
+</body>
+</html>

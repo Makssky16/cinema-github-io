@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі фільму</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("Fon.jpg");
+            background-size: cover;
+
+            background-attachment: fixed; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            height: 100%;
+        }
+        .film-box {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .film-box img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        .info{
+            margin: 20px;
+            color: #fff;
+            max-width: 600px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .movie-card {
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+        }
+        .movie-poster {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .movie-info {
+            flex: 1;
+        }
+        .sessions {
+            margin-top: 10px;
+        }
+        .session {
+            margin-bottom: 5px;
+            background: #eee;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .session strong {
+            margin-right: 10px;
+        }
+            #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+    #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+#overlay-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 10% auto;
+  text-align: center;
+}
+
+#overlay-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+#overlay-content button {
+  margin-top: 10px;
+}
+     button {
+      margin: 5px;
+      padding: 8px 14px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: none;
+      background: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffc107;
+    }
+    .ulbutton{
+    display: block;
+    align-items:center;
+    }
+    .libutton {
+    display: inline-block;
+    position: relative;
+    }
+   .trailer{
+    display: flex;
+    justify-content: center;
+   } 
+
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+h2{
+    font-size: 30px;
+}
+body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+.footer, .footer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+     justify-content: center;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color:  rgba(0, 0, 0, 0.5);
+    padding: 70px 0;
+    margin: auto;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+.occupied {
+  background-color: red !important;
+  pointer-events: none;
+  color: white;
+}
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.seat.available {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.seat.selected {
+    background-color: #2196F3;
+    color: white;
+    transform: scale(1.1);
+}
+
+.seat.occupied {
+    background-color: #f44336;
+    color: white;
+    cursor: not-allowed;
+}
+
+.seat:hover:not(.occupied) {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="particles"></div>
+    <h1 id="title">Завантаження...</h1>
+    <div class="film-box" id="movieDetails"></div>
+<div id="movieDetails"></div>
+<div class="film-box" style="display: flex; justify-content: center;">
+<div  id="seat-container"></div>
+</div>
+<div id="overlay" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease forwards;
+">
+
+    <div style="
+        background: rgba(0, 0, 0, 0.85);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        min-width: 320px;
+        color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        transform: scale(0.95);
+        animation: popupIn 0.4s ease forwards;
+    ">
+        <h2 style="margin-bottom: 20px; font-size: 24px; color: white; font-weight: 600;">
+            Введіть дані для бронювання
+        </h2>
+
+        <input id="customer-name" type="text" placeholder="Ваше ім'я" style="
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #222;
+            color: white;
+            outline: none;
+        "><br>
+
+        <input id="customer-email" type="email" placeholder="Email" style="
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #222;
+            color: white;
+            outline: none;
+        "><br>
+
+        <button id="submit-booking" style="
+            margin-top: 15px;
+            background: linear-gradient(135deg, #00c3ff, #0066ff);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        ">Підтвердити</button>
+
+        <button onclick="closeOverlay()" style="
+            margin-left: 10px;
+            margin-top: 15px;
+            background: transparent;
+            color: #ccc;
+            border: 1px solid #ccc;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s, border-color 0.3s;
+        ">Скасувати</button>
+    </div>
+</div>
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieId = urlParams.get("id");
+    const sessionId = parseInt(urlParams.get("sessionId"));
+
+    if (!movieId) {
+        document.getElementById("title").innerText = "ID фільму не вказано!";
+        return;
+    }
+
+    try {
+        const res = await fetch(`http://localhost:5068/api/movies/${movieId}`);
+        if (!res.ok) throw new Error("Фільм не знайдено");
+
+        const data = await res.json();
+        const movie = data.movie ?? data;
+        const sessions = data.sessions ?? [];
+
+        document.getElementById("title").innerText = movie.title;
+
+        let trailerHtml = "<p>Трейлер відсутній</p>";
+        if (movie.trailerUrl) {
+            const videoId = new URL(movie.trailerUrl).searchParams.get("v");
+            if (videoId) {
+                trailerHtml = `
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/${videoId}"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>`;
+            }
+        }
+
+        let sessionsHtml = "";
+        for (const s of sessions) {
+            const dt = new Date(s.sessionDateTime);
+            const formatted = `${dt.getDate().toString().padStart(2, '0')}.${(dt.getMonth()+1).toString().padStart(2, '0')} ${dt.getHours().toString().padStart(2, '0')}:${dt.getMinutes().toString().padStart(2, '0')}`;
+            sessionsHtml += `
+                <li class="libutton">
+                    <a href="?id=${movieId}&sessionId=${s.id}">
+                        <button>${formatted}</button>
+                    </a>
+                </li>`;
+        }
+
+        document.getElementById("movieDetails").innerHTML = `
+            <table>
+                <tr>
+                    <td><img src="${movie.posterUrl}" alt="${movie.title}" width="300"></td>
+                    <td>
+                        <div class="info">
+                            <p><strong>Жанр:</strong> ${movie.genre}</p>
+                            <p><strong>Тривалість:</strong> ${movie.durationMinutes} хв</p>
+                            <p><strong>Опис:</strong> ${movie.description}</p>
+                        </div>
+                        <h1 style="font-size: 25px;">Сеанси:</h1>
+                        <ul class="ulbutton">${sessionsHtml || "<li>Наразі сеансів немає</li>"}</ul>
+                    </td>
+                </tr>
+            </table>
+            <div class="trailer">${trailerHtml}</div>
+        `;
+
+        if (sessionId) {
+            await loadBookedSeats(sessionId);
+        }
+
+    } catch (error) {
+        document.getElementById("title").innerText = "Помилка: " + error.message;
+    }
+
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animationDuration = `${6 + Math.random() * 8}s`;
+        particle.style.animationDelay = `${Math.random() * 10}s`;
+        document.getElementById('particles').appendChild(particle);
+    }
+});
+
+const totalSeats = 60;
+const seatsPerRow = 10;
+let bookedSeats = [];
+let selectedSeats = new Set();
+
+async function loadBookedSeats(sessionId) {
+    try {
+        const res = await fetch(`http://localhost:5068/api/booking/occupied-seats/${sessionId}`);
+        if (!res.ok) throw new Error("Не вдалося завантажити місця");
+        
+        const data = await res.json();
+        bookedSeats = data.occupiedSeats || [];
+        renderSeats();
+    } catch (error) {
+        console.error("Помилка завантаження місць:", error);
+        alert("Не вдалося завантажити інформацію про місця");
+    }
+}
+
+function renderSeats() {
+    const container = document.getElementById('seat-container');
+    container.innerHTML = '';
+
+    for (let row = 0; row < Math.ceil(totalSeats / seatsPerRow); row++) {
+        const rowDiv = document.createElement('div');
+        rowDiv.style.marginBottom = '10px';
+
+        for (let col = 1; col <= seatsPerRow; col++) {
+            const seatNumber = row * seatsPerRow + col;
+            if (seatNumber > totalSeats) break;
+
+            const btn = document.createElement('button');
+            btn.textContent = seatNumber;
+            btn.style.width = '50px';
+            btn.style.height = '50px';
+            btn.style.margin = '3px';
+
+            if (bookedSeats.includes(seatNumber)) {
+                btn.disabled = true;
+                btn.style.backgroundColor = 'red';
+                btn.title = 'Зайняте місце';
+            } else if (selectedSeats.has(seatNumber)) {
+                btn.style.backgroundColor = 'green';
+            } else {
+                btn.style.backgroundColor = 'lightgray';
+            }
+
+            btn.addEventListener('click', () => {
+                if (bookedSeats.includes(seatNumber)) return;
+                if (selectedSeats.has(seatNumber)) {
+                    selectedSeats.delete(seatNumber);
+                    btn.style.backgroundColor = 'lightgray';
+                } else {
+                    selectedSeats.add(seatNumber);
+                    btn.style.backgroundColor = 'green';
+                }
+            });
+
+            rowDiv.appendChild(btn);
+        }
+
+        container.appendChild(rowDiv);
+    }
+
+    if (!document.getElementById('book-button')) {
+        const wrapper = document.createElement('div');
+        wrapper.style.display = 'flex';
+        wrapper.style.justifyContent = 'center';
+
+        const bookBtn = document.createElement('button');
+        bookBtn.id = 'book-button';
+        bookBtn.textContent = 'Забронювати';
+        bookBtn.style.marginTop = '15px';
+        bookBtn.addEventListener('click', openOverlay);
+        bookBtn.style.width = '200px';
+        bookBtn.style.height = '50px';
+
+        wrapper.appendChild(bookBtn);
+        container.appendChild(wrapper);
+    }
+}
+
+function openOverlay() {
+    if (selectedSeats.size === 0) {
+        alert('Оберіть хоча б одне місце');
+        return;
+    }
+    document.getElementById('overlay').style.display = 'block';
+}
+
+document.getElementById('submit-booking').addEventListener('click', async () => {
+    const name = document.getElementById('customer-name').value.trim();
+    const email = document.getElementById('customer-email').value.trim();
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = parseInt(urlParams.get("sessionId"));
+
+    if (!name || !email || !sessionId) {
+        alert("Будь ласка, введіть ім'я, email і оберіть сеанс");
+        return;
+    }
+
+    const bookingData = {
+        sessionId,
+        seatsCount: selectedSeats.size,
+        seatNumbers: Array.from(selectedSeats),
+        customerName: name,
+        customerEmail: email
+    };
+
+    try {
+        const res = await fetch('http://localhost:5068/api/booking/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingData)
+        });
+        
+        if (res.ok) {
+            alert('Бронювання успішне!');
+            selectedSeats.clear();
+            closeOverlay();
+            await loadBookedSeats(sessionId);
+        } else {
+            const errorData = await res.json();
+            alert(`Помилка при бронюванні: ${errorData.message || 'Невідома помилка'}`);
+        }
+    } catch (err) {
+        alert('Сталася помилка під час з\'єднання з сервером');
+        console.error('Помилка бронювання:', err);
+    }
+});
+
+function closeOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('customer-name').value = '';
+    document.getElementById('customer-email').value = '';
+}
+</script>
+
+
+
+
+</body>
+</html>
